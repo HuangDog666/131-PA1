@@ -6,7 +6,6 @@ public class SequentialREPL {
 	static String currentWorkingDirectory;
 
 	public static void main(String[] args){
-		System.out.println("XXXXXXXXXXXXXXXXXXXXX");
 	}
 
 }

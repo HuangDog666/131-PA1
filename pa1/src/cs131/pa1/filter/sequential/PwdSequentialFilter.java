@@ -5,7 +5,7 @@ public class PwdSequentialFilter extends SequentialFilter{
 
 	@Override
 	public void process() {
-		System.out.println(SequentialREPL.currentWorkingDirectory);
+		System.out.println(SequentialREPL.currentWorkingDirectory);//print out the working directory
 	}
 
 	@Override

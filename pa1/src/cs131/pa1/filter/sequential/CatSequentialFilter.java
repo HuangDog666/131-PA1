@@ -34,6 +34,7 @@ public class CatSequentialFilter extends SequentialFilter {
 			error = true;
 			return;
 		}
+		/*output one or more files*/
 		String fileName = "";
 		for (int i = 1; i < commands.length; i++) {
 

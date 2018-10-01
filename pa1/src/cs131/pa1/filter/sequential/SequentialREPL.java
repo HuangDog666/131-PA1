@@ -16,6 +16,7 @@ public class SequentialREPL {
 		Scanner scan = new Scanner(System.in);
 		try {
 			System.out.print(Message.WELCOME);
+			//use while loop to let users enter their commands, unless the command is exit
 			while (true) {
 				System.out.print(Message.NEWCOMMAND);
 				String command = scan.nextLine();
@@ -23,7 +24,7 @@ public class SequentialREPL {
 					System.out.print(Message.GOODBYE);
 					break;
 				}
-				
+				//use sequentialCommandBuilder to manage the commands
 				List<SequentialFilter> filters = SequentialCommandBuilder.createFiltersFromCommand(command);
 				if (filters == null) {
 					continue;
@@ -39,7 +40,7 @@ public class SequentialREPL {
 				
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace();//print this throwable and its backtrace to the standard error stream
 		}finally {
 			scan.close();
 		}

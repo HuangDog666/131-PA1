@@ -15,6 +15,7 @@ public class LsSequentialFilter extends SequentialFilter {
 		if (files == null) {
 			return;
 		}
+		//put all files into the input queue
 		for (String file : files) {
 			if (file.startsWith(".")) {
 				continue;

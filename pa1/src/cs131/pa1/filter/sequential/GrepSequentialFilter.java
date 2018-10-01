@@ -10,14 +10,14 @@ public class GrepSequentialFilter extends SequentialFilter {
 	public GrepSequentialFilter(String command) {
 		String [] commands = command.split(" ");
 		if (commands.length < 2) {
-			output.add(String.format(Message.REQUIRES_PARAMETER.toString(), "grep"));
+			output.add(String.format(Message.REQUIRES_PARAMETER.toString(), "grep"));//output lines with the string
 			input.clear();
 			return;
 		}
 		reg = commands[1];
 	}
 
-
+	//read lines
 	@Override
 	protected String processLine(String line) {
 		if (line.contains(reg)) {

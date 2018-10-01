@@ -26,7 +26,7 @@ public class CdSequentialFilter extends SequentialFilter {
 			System.out.print(String.format(Message.INVALID_PARAMETER.name(), "cd"));
 			return;
 		}
-
+	/*deal with the situation of ".."*/
 		if (commands[1].startsWith("..")) {
 			String[] dirs = SequentialREPL.currentWorkingDirectory.split(FILE_SEPARATOR);
 			String newPath = "";

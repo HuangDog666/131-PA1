@@ -9,11 +9,11 @@ public class SequentialCommandBuilder {
 
 	public static List<SequentialFilter> createFiltersFromCommand(String command) {
 		List<SequentialFilter> filters = new ArrayList<SequentialFilter>();
-		String[] subCommands = command.split(("\\|"));
+		String[] subCommands = command.split(("\\|"));//use split to separate commands
 		SequentialFilter last = null;
 		String lastCmd = null;
 		for (String subC : subCommands) {
-
+			
 			while (subC.trim().indexOf(">") > 0) {
 				SequentialFilter filter = constructFilterFromSubCommand(subC.substring(0, subC.indexOf(">")).trim());
 				if (filter == null) {
@@ -27,6 +27,7 @@ public class SequentialCommandBuilder {
 				filters.add(filter);
 				subC = subC.substring(subC.indexOf(">"));
 			}
+			//use several if statements to differentiate different commands
 			if (subC.trim().equals("cd") || subC.trim().equals("cat") || subC.trim().equals(">")
 					|| subC.trim().equals("grep")) {
 				System.out.print(String.format(Message.REQUIRES_PARAMETER.toString(), subC.trim()));
@@ -83,6 +84,7 @@ public class SequentialCommandBuilder {
 		return null;
 	}
 
+	//connect with those specific command classes
 	private static SequentialFilter constructFilterFromSubCommand(String command) {
 		if ((command.startsWith("ls ")) || command.trim().equals("ls")) {
 			return new LsSequentialFilter();
